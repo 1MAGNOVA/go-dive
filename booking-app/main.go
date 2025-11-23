@@ -15,6 +15,7 @@ func main() {
 	var lastName string
 	var email string
 	// ask user for name
+	var bookings = [1000]string{}
 
 	var userTickets uint
 
@@ -27,7 +28,12 @@ func main() {
 	fmt.Println("How many Tickets would you like to buy?:")
 	fmt.Scan(&userTickets)
 	remainingTickets = remainingTickets - userTickets
+	bookings[0] = firstName + " " + lastName
 
 	fmt.Printf("%v, %v with email address: %v, booked %v amount of tickets.\n", firstName, lastName, email, userTickets)
 	fmt.Printf("You have %v tickets left\n", remainingTickets)
+
+	fmt.Printf("%v reserved bookings\n", bookings[0])
+	fmt.Printf("%v these people have booked tickets\n", bookings)
+
 }
